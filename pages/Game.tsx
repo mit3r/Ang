@@ -11,7 +11,9 @@ export default function Game() {
 
   useEffect(() => {
     if (a != null) setScore(score + 1);
-  }, [a]);
+
+    if (question == null) setA(null);
+  }, [a, question]);
 
   const correctness = question?.correct.includes(a!);
 
